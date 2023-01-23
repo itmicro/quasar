@@ -28,7 +28,7 @@ import { RouterLink } from 'vue-router'
 
 
         <q-btn-group spread>
-          <q-btn color="red" label="вступить в бой" icon="timeline" @click="fetchPost(text,text1,text2)"/>
+          <q-btn color="red" label="вступить в бой" icon="timeline" @click="fetchPost(text, text1, text2)" />
           <q-btn color="green" label="не вступать" icon="visibility" />
         </q-btn-group>
       </div>
@@ -92,29 +92,13 @@ export default defineComponent({
   setup() {
 
     const store = usePostStore();
-
-    // Option 2: use computed and functions to use the store
     const count = computed(() => store.title);
     const doubleCountValue = computed(() => store.title);
-    // const incrementCount = () => store.increment(); // use action
-    // const decrementCount = () => store.counter--; // manipulate directly
-
-    // // Option 3: use destructuring to use the store in the template
-    // const { counter, doubleCount } = storeToRefs(store); // state and getters need "storeToRefs"
-    // const { increment } = store; // actions can be destructured directly
 
     return {
-      // Option 1: return the store directly and couple it in the template
       store,
-
-      // Option 2: use the store in functions and compute the state to use in the template
       count,
       doubleCountValue,
-
-
-
-      // Option 3: pass the destructed state, getters and actions to the template
-
     };
   },
 

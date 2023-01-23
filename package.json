@@ -10,7 +10,8 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "build e": "quasar electron",
-    "capacitor":"quasar dev --mode capacitor --target android"
+    "capacitor": "quasar dev --mode capacitor --target android",
+    "build a": "quasar build --mode capacitor --target  android"
   },
   "dependencies": {
     "axios": "^0.21.1",
