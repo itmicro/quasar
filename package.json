@@ -6,7 +6,11 @@
   "author": "itmicro <rumordektest@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "build e": "quasar electron",
+    "capacitor":"quasar dev --mode capacitor --target android"
   },
   "dependencies": {
     "axios": "^0.21.1",

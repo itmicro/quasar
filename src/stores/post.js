@@ -16,7 +16,7 @@ export const usePostStore = defineStore({
       this.posts = []
       this.loading = true
       try {
-        this.posts = await fetch('http://localhost:9000/api/v1/products')
+        this.posts = await fetch('https://ap-term.nftnews1.ru/api/v1/products')
           .then((response) => response.json())
       } catch (error) {
         this.error = error
@@ -44,7 +44,7 @@ export const usePostStore = defineStore({
           redirect: 'follow'
         };
 
-        fetch("http://127.0.0.1:9000/api/v1/products", requestOptions)
+        fetch("https://ap-term.nftnews1.ru/api/v1/products", requestOptions)
           .then((response) => response.json())
       } catch (error) {
         this.error = error

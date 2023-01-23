@@ -2,20 +2,10 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-
-
-
-
-
-
 </script>
 <template>
   <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+    <img alt="Quasar logo" src="~assets/quasar-logo-vertical.svg" style="width: 200px; height: 200px"> Го пилить?
   </q-page>
 </template>
 
@@ -25,13 +15,13 @@ import { storeToRefs } from 'pinia'
 import { usePostStore } from '../stores/post'
 
 const { posts, loading, error } = storeToRefs(usePostStore())
-const { fetchPosts,fetchPost } = usePostStore()
+const { fetchPosts, fetchPost } = usePostStore()
 export default defineComponent({
   name: 'IndexPage',
-  async mounted(){
-    // await fetchPost(1,1,2)
-await fetchPosts()
-await console.log(posts)
+  async mounted() {
+    await fetchPost(1, 1, 2)
+    await fetchPosts()
+    await console.log(posts)
   },
   setup() {
     const store = usePostStore();
