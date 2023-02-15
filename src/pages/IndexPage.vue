@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 </script>
 <template>
   <q-page class="flex flex-center justify-space">
-    123
+    {{posts}}
   </q-page>
 </template>
 
