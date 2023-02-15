@@ -1,56 +1,58 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 export const usePostStore = defineStore({
-  id: 'post',
+  id: "post",
   state: () => ({
     posts: [],
     post: null,
     loading: false,
-    error: null
+    error: null,
   }),
   getters: {
     doubleCount: (state) => state.counter * 2,
   },
   actions: {
     async fetchPosts() {
-      this.posts = []
-      this.loading = true
+      this.posts = [];
+      this.loading = true;
       try {
-        this.posts = await fetch('https://test.spb-site.ru/api/v1/products')
-          .then((response) => response.json())
+        this.posts = await fetch(
+          "https://php-css.mmorpg-game.fun/api/v1/products"
+        ).then((response) => response.json());
       } catch (error) {
-        this.error = error
+        this.error = error;
       } finally {
-        this.loading = false
+        this.loading = false;
       }
     },
     async fetchPost(hp, title, attack) {
-      this.post = null
-      this.loading = true
+      this.post = null;
+      this.loading = true;
       try {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-          "hp": hp,
-          "title": title,
-          "attack": attack
+          hp: hp,
+          title: title,
+          attack: attack,
         });
 
         var requestOptions = {
-          method: 'POST',
+          method: "POST",
           body: raw,
           headers: myHeaders,
-          redirect: 'follow'
+          redirect: "follow",
         };
 
-        fetch("https://test.spb-site.ru/api/v1/products", requestOptions)
-          .then((response) => response.json())
+        fetch("https://php-css.mmorpg-game.fun/api/v1/products", requestOptions).then(
+          (response) => response.json()
+        );
       } catch (error) {
-        this.error = error
+        this.error = error;
       } finally {
-        this.loading = false
+        this.loading = false;
       }
-    }
-  }
+    },
+  },
 });
